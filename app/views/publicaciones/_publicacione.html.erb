@@ -1,0 +1,17 @@
+<div id="<%= dom_id publicacione %>">
+  <p>
+    <strong>Titulo:</strong>
+    <%= publicacione.titulo %>
+  </p>
+
+  <p>
+    <strong>Descripcion:</strong>
+    <%= publicacione.descripcion %>
+  </p>
+
+  <p>
+    <strong>Usuario:</strong>
+    <%= link_to publicacione.usuario_id , user_publicacione_path %>
+  </p>
+
+</div>

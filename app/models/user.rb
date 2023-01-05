@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   extend Devise::Models
-  devise :database_authenticatable, :registerable
-  has_many :publicaciones
+  devise :devise :database_authenticatable, :registerable,
+  :recoverable, :rememberable, :validatable
+  has_many :publicacione , dependent: :destroy
+  accepts_nested_attributes_for :publicacione
 
 end

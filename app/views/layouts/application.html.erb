@@ -11,12 +11,9 @@
   </head>
 
   <body>
-  <nav>
-      <ul>
-        <li><%= link_to "Etiqueta", labels_path %></li>
-        <li><%= link_to "Publicaciones", publicaciones_path %></li>
-      </ul>
-    </nav>
+      <%= render 'shared/navbar' %>
+      <main class="container">
+   
     <%= yield %>
     <p class="notice"><%= notice %></p>
  <p class="alert"><%= alert %></p>

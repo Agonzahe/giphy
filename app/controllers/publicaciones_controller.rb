@@ -1,5 +1,6 @@
 class PublicacionesController < ApplicationController
-  before_action :set_publicacione, only: %i[ show edit update destroy ]
+  #before_action :set_publicacione, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, except: %i[ index show ]
 
   # GET /publicaciones or /publicaciones.json
   def index
@@ -12,7 +13,7 @@ class PublicacionesController < ApplicationController
 
   # GET /publicaciones/new
   def new
-    @publicacione = Publicacione.new
+    @publicacione = current_user.publications.build
   end
 
   # GET /publicaciones/1/edit
@@ -21,7 +22,7 @@ class PublicacionesController < ApplicationController
 
   # POST /publicaciones or /publicaciones.json
   def create
-    @publicacione = Publicacione.new(publicacione_params)
+    @publicacione = current_user.publications.build(publication_params)
 
     respond_to do |format|
       if @publicacione.save
@@ -65,6 +66,6 @@ class PublicacionesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def publicacione_params
-      params.require(:publicacione).permit(:titulo, :descripcion, :usuario_id)
+      params.require(:publication).permit(:title, :description, :label_id, :user_id)
     end
 end

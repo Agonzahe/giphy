@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Tableros</h1>
+
+<div id="boards">
+  <% @boards.each do |board| %>
+    <%= render board %>
+    <p>
+      <%= link_to "Ver este tablero", board %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "Nuevo Tablero", new_board_path %>

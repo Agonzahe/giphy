@@ -3,8 +3,8 @@
 <%= render @publicacione %>
 
 <div>
-  <%= link_to "Edit this publicacione", edit_publicacione_path(@publicacione) %> |
-  <%= link_to "Back to publicaciones", publicaciones_path %>
+  <%= link_to "editar publicaciones", edit_publicacione_path(@publicacione) %> |
+  <%= link_to "volver a publicaciones", publicaciones_path %>
 
-  <%= button_to "Destroy this publicacione", @publicacione, method: :delete %>
+  <%= button_to "eliminar publicaciones", @publicacione, method: :delete %>
 </div>

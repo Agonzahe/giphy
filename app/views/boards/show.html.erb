@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @board %>
+
+<div>
+  <%= link_to "editar tablero", edit_board_path(@board) %> |
+  <%= link_to "volver a tablero", boards_path %>
+
+  <%= button_to "eliminar tablero", @board, method: :delete %>
+</div>

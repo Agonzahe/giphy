@@ -1,5 +1,5 @@
 class Label < ApplicationRecord
-  belongs_to :publicaciones
-  has_many :publicaciones, dependent: :destroy
+  has_and_belongs_to_many :publicaciones
+  #has_many :publicaciones, dependent: :destroy
   validates :nombre, presence: true
 end
